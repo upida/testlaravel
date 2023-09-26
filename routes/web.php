@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/repositories', function() {
+Route::get('/repositories', function() { 
     $repositories = Http::get('https://api.github.com/repositories')->body();
 
     $insert = array_map(function($data) {
